@@ -1,12 +1,22 @@
+'use client';
+
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "/public/L2OndemandBI.png";
 import TRM from "/public/TokamakRollupHub.png";
 import Thanos from "/public/ThanosSymbol.png";
-import ArrowDown from "/public/ArrowDown.png";
 import MobileMenu from "/public/MobileMenu.png";
+import { NavLinks } from "./nav-links";
+
 
 export default function NavBar() {
+
+  const links = [
+    { href: '/deploy', name: 'Deploy', arrowDown: false },
+    { href: '/discover', name: 'Discover', arrowDown: true },
+    { href: '/more', name: 'More', arrowDown: true },
+  ]
+
   return (
     <div className="relative flex min-h-20 items-center justify-center overflow-x-clip overflow-y-visible">
       <div className="elliptical absolute -top-[87px] min-h-[174px] min-w-[1000px] bg-custom-blue blur-3xl"></div>
@@ -25,25 +35,9 @@ export default function NavBar() {
             ></Image>
           </Link>
         </div>
-        <nav className="w-2/6">
-          <ul className="hidden w-full justify-around gap-8 md:flex lg:gap-0">
-            <li>
-              <Link href={"/deploy"}>Deploy</Link>
-            </li>
-            <li>
-              <Link href={"/discover"} className="flex items-center gap-1">
-                Discover
-                <Image src={ArrowDown} className="min-w-3"></Image>
-              </Link>
-            </li>
-            <li>
-              <Link href={"/more"} className="flex items-center gap-1">
-                More
-                <Image src={ArrowDown} className="min-w-3"></Image>
-              </Link>
-            </li>
-          </ul>
-        </nav>
+        <div className="w-2/6">
+          <NavLinks links={links} />
+        </div>
         <div className="flex w-2/6 justify-end">
           <div className="flex w-full items-center justify-end gap-4">
             <div className="flex min-h-8 min-w-8 items-center justify-center rounded-full border-2 border-tokamak-blue">
@@ -58,7 +52,7 @@ export default function NavBar() {
             ></Image>
           </div>
         </div>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 }
