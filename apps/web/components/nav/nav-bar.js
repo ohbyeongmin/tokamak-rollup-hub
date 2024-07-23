@@ -1,5 +1,3 @@
-'use client';
-
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "/public/L2OndemandBI.png";
@@ -10,7 +8,6 @@ import { NavLinks } from "./nav-links";
 
 
 export default function NavBar() {
-
   const links = [
     { href: '/deploy', name: 'Deploy', arrowDown: false },
     { href: '/discover', name: 'Discover', arrowDown: true },
