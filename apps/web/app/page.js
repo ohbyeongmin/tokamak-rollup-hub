@@ -1,3 +1,3 @@
 export default function Home() {
-  return <div>Hello, World!</div>;
+  return <div className="min-h-[100vh]">Hello, World!</div>;
 }
