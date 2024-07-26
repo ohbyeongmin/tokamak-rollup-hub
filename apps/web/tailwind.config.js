@@ -22,11 +22,14 @@ module.exports = {
         "button-border-gray": "#1D2838",
         "button-text-gray": "#C1C2D9",
         "copyright-gray": "#616D7E",
+        "optimism-red": "#FF0420",
+        "zeroknowledge-green": "#06D863",
+        "tokamak-blue-hover": "#0057E6",
       },
     },
   },
   fontFamily: {
     sans: ['"Proxima Nova"', ...defaultTheme.fontFamily.sans],
   },
-  plugins: [],
+  plugins: [require("@xpd/tailwind-3dtransforms")],
 };

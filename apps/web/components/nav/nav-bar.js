@@ -6,13 +6,12 @@ import Thanos from "/public/ThanosSymbol.png";
 import MobileMenu from "/public/MobileMenu.png";
 import { NavLinks } from "./nav-links";
 
-
 export default function NavBar() {
   const links = [
-    { href: '/deploy', name: 'Deploy', arrowDown: false },
-    { href: '/discover', name: 'Discover', arrowDown: true },
-    { href: '/more', name: 'More', arrowDown: true },
-  ]
+    { href: "/deploy", name: "Deploy", arrowDown: false },
+    { href: "/discover", name: "Discover", arrowDown: true },
+    { href: "/more", name: "More", arrowDown: true },
+  ];
 
   return (
     <div className="relative flex min-h-20 items-center justify-center overflow-x-clip overflow-y-visible">
@@ -49,7 +48,7 @@ export default function NavBar() {
             ></Image>
           </div>
         </div>
-      </div >
-    </div >
+      </div>
+    </div>
   );
 }

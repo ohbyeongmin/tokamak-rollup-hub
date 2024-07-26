@@ -3,15 +3,15 @@ import ArrowTop from "/public/ArrowTop.png";
 
 export default function Footer() {
   return (
-    <div className="flex justify-between items-center px-5 fixed left-0 bottom-0 w-full h-20 size-3 ">
-      <p className="font-normal flex gap-2 font-['Open_Sans'] text-copyright-gray ">
+    <footer className="flex size-3 h-20 w-full items-center justify-between bg-black px-5">
+      <p className="flex gap-2 font-['Open_Sans'] font-normal text-copyright-gray">
         <span>Copyright ©2024</span>
         <span className="text-zinc-200">Tokamak Network</span>
         <span className="hidden md:flex">All Rights Reserved.</span>
       </p>
-      <div className="w-16 h-16 flex justify-center items-center">
+      <div className="flex h-16 w-16 items-center justify-center">
         <Image src={ArrowTop}></Image>
       </div>
-    </div>
-  )
+    </footer>
+  );
 }

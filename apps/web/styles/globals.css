@@ -35,3 +35,95 @@ body {
 .elliptical {
   border-radius: 100% 100% 100% 100%;
 }
+
+@keyframes fade-right {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.horizon-cards__container--fade-right {
+  animation-name: fade-right;
+  animation-duration: 1s;
+}
+
+@keyframes horizon-card-1 {
+  from {
+    visibility: hidden;
+    left: 65%;
+  }
+  50% {
+    visibility: visible;
+  }
+}
+
+.horizon-card__card-1--appear {
+  animation-name: horizon-card-1;
+  animation-duration: 2s;
+}
+
+@keyframes horizon-card-3 {
+  from {
+    visibility: hidden;
+    left: 35%;
+  }
+  50% {
+    visibility: visible;
+  }
+}
+
+.horizon-card__card-3--appear {
+  animation-name: horizon-card-3;
+  animation-duration: 2s;
+}
+
+@keyframes fade-top {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.vertical-cards__container--fade-top {
+  animation-name: fade-top;
+  animation-duration: 1s;
+}
+
+@keyframes vertical-card {
+ from {
+   visibility: hidden;
+   left: 20%;
+   bottom: 15%;
+ }
+ 50% {
+    visibility: visible;
+ }
+}
+
+.vertical-cards__card--appear {
+  animation-name: vertical-card;
+  animation-duration: 2s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
