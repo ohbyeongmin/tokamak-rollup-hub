@@ -4,24 +4,27 @@ import Link from "next/link"
 import ImageBtn from "../buttons/image-button"
 import GeneralBtn from "../buttons/general"
 import Cancel from "/public/Cancel.png";
-import { handleSubmit } from "./details-action"
 import { useState } from "react"
 import { details } from "@/lib/deploy"
 import { objectMap } from "@/lib/utils"
+import { useRouter } from "next/navigation";
+import { handleSubmit } from "./details-action";
 
 export default function DetailsCard({ rollupType, networkType }) {
   const { description, networks } = details.find((t) => {
     return t.type === rollupType
   })
 
+
   const [detailValues, setDetailValues] = useState({
-    "rollupName": "",
-    "chainId": null,
-    "adminAddress": "",
-    "sequencerAddress": "",
-    "batcherAddress": "",
-    "proposerAddress": "",
+    rollupName: "",
+    chainId: null,
+    adminAddress: "",
+    sequencerAddress: "",
+    batcherAddress: "",
+    proposerAddress: "",
   });
+
 
   const valueChange = (event, key) => {
     const {
@@ -65,7 +68,7 @@ export default function DetailsCard({ rollupType, networkType }) {
             <div className="flex items-center w-full justify-between bg-[#080A0E] rounded-xl p-2 border-[1px] border-[#192232]">
               <input type="number" id="chainId" onChange={(e) => {
                 valueChange(e, 'chainId')
-              }} value={detailValues['chainId']} name="chinId" className="w-full [&::-webkit-inner-spin-button]:appearance-none bg-transparent outline-none text-white caret-tokamak-blue" />
+              }} value={detailValues['chainId']} name="chainId" className="w-full [&::-webkit-inner-spin-button]:appearance-none bg-transparent outline-none text-white caret-tokamak-blue" />
               <ImageBtn type="button" image={Cancel} onClick={() => {
                 clearValue('chainId')
               }} />
@@ -90,7 +93,7 @@ export default function DetailsCard({ rollupType, networkType }) {
               <div className="md:w-1/2 flex flex-col gap-2">
                 <label htmlFor="admin">Admin</label>
                 <div className="flex items-center w-full justify-between bg-[#080A0E] rounded-xl p-2 border-[1px] border-[#192232]">
-                  <input type="text" name="admin" id="admin" onChange={(e) => {
+                  <input type="text" name="adminAddress" id="admin" onChange={(e) => {
                     valueChange(e, 'adminAddress')
                   }} value={detailValues['adminAddress']} className="w-full bg-transparent outline-none text-white caret-tokamak-blue" />
                   <ImageBtn type="button" image={Cancel} onClick={() => {
@@ -101,7 +104,7 @@ export default function DetailsCard({ rollupType, networkType }) {
               <div className="md:w-1/2 flex flex-col gap-2">
                 <label htmlFor="sequencer">Sequencer</label>
                 <div className="flex items-center w-full justify-between bg-[#080A0E] rounded-xl p-2 border-[1px] border-[#192232]">
-                  <input type="text" name="sequencer" id="sequencer" onChange={(e) => {
+                  <input type="text" name="sequencerAddress" id="sequencer" onChange={(e) => {
                     valueChange(e, 'sequencerAddress')
                   }} value={detailValues['sequencerAddress']} className="w-full bg-transparent outline-none text-white caret-tokamak-blue" />
                   <ImageBtn type="button" image={Cancel} onClick={() => {
@@ -114,7 +117,7 @@ export default function DetailsCard({ rollupType, networkType }) {
               <div className="md:w-1/2 flex flex-col gap-2">
                 <label htmlFor="batcher">Batcher</label>
                 <div className="flex items-center w-full justify-between bg-[#080A0E] rounded-xl p-2 border-[1px] border-[#192232]">
-                  <input type="text" name="batcher" id="batcher" onChange={(e) => {
+                  <input type="text" name="batcherAddress" id="batcher" onChange={(e) => {
                     valueChange(e, 'batcherAddress')
                   }} value={detailValues['batcherAddress']} className="w-full bg-transparent outline-none text-white caret-tokamak-blue" />
                   <ImageBtn type="button" image={Cancel} onClick={() => {
@@ -125,7 +128,7 @@ export default function DetailsCard({ rollupType, networkType }) {
               <div className="md:w-1/2 flex flex-col gap-2">
                 <label htmlFor="proposer">Proposer</label>
                 <div className="flex items-center w-full justify-between bg-[#080A0E] rounded-xl p-2 border-[1px] border-[#192232]">
-                  <input type="text" name="proposer" id="proposer" onChange={(e) => {
+                  <input type="text" name="proposerAddress" id="proposer" onChange={(e) => {
                     valueChange(e, 'proposerAddress')
                   }} value={detailValues['proposerAddress']} className="w-full bg-transparent outline-none text-white caret-tokamak-blue" />
                   <ImageBtn type="button" image={Cancel} onClick={() => {
