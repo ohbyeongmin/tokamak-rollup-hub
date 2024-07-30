@@ -6,8 +6,10 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"time"
 
 	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/gin-gonic/gin"
 	"github.com/tokamak-network/tokamak-thanos/op-chain-ops/genesis"
 )
@@ -87,6 +89,8 @@ func MakeDeployConfig(body DevnetBody) (*genesis.DeployConfig, error) {
 	template.BatchSenderAddress = common.HexToAddress(body.BatcherAddress)
 
 	template.L2OutputOracleProposer = common.HexToAddress(body.ProposerAddress)
+
+	template.L1GenesisBlockTimestamp = hexutil.Uint64(time.Now().Unix())
 
 	deployConfig, _ := json.Marshal(template)
 	os.WriteFile(fmt.Sprintf("temp-db/%s.json", body.RollupName), deployConfig, 0644)
