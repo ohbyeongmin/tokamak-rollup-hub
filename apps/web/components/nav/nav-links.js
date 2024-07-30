@@ -12,7 +12,7 @@ export function NavLinks({ links }) {
   return (
     <nav className="hidden w-full justify-around gap-8 md:flex lg:gap-0">
       {links.map((link, index) => {
-        const isActive = pathname === link.href;
+        const isActive = pathname.includes(link.href);
         return (
           <Link
             key={index}

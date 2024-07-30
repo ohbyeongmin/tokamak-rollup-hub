@@ -1,3 +1,5 @@
+'use client'
+
 import Image from "next/image";
 import ArrowTop from "/public/ArrowTop.png";
 
@@ -9,7 +11,12 @@ export default function Footer() {
         <span className="text-zinc-200">Tokamak Network</span>
         <span className="hidden md:flex">All Rights Reserved.</span>
       </p>
-      <div className="flex h-16 w-16 items-center justify-center">
+      <div className="flex h-16 w-16 items-center justify-center hover:cursor-pointer" onClick={() => {
+        window.scrollTo({
+          top: 0,
+          behavior: "auto",
+        })
+      }}>
         <Image src={ArrowTop}></Image>
       </div>
     </footer>

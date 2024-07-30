@@ -25,6 +25,7 @@ module.exports = {
         "optimism-red": "#FF0420",
         "zeroknowledge-green": "#06D863",
         "tokamak-blue-hover": "#0057E6",
+        "card-background": "#0E131B",
       },
     },
   },
